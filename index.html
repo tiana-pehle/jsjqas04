@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- jsjqas04_start_file.html
+     This file contains the starting code that you
+     can use for Assignment 4.
+-->     
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSJQ Assignment 4 - Arrays / Date Starter File</title>
+
+    <style>
+        body{
+            font-family: arial, sans-serif;
+            font-size: 100%;
+        }
+    </style>
+    
+    <script>
+    
+
+        //************************************************************
+        // 1: define variables for today's date,
+        //************************************************************  
+      
+        var today = new Date();
+        
+        var theDay = today.getDay();
+     
+        //************************************************************
+        // 2: define an array to hold the day names 
+        //************************************************************  
+    var dayArray = new Array();
+        
+        dayArray[0] = "Sunday";
+        dayArray[1] = "Monday";
+        dayArray[2] = "Tuesday";
+        dayArray[3] = "Wednesday";
+        dayArray[4] = "Thursday";
+        dayArray[5] = "Friday";
+        dayArray[6] = "Saturday";
+        //************************************************************
+        // 3: define an array to hold the daily quotes
+        //************************************************************  
+    var quotesArray = ["Ability is nothing without opportunity - Napoleon Bonapart", "Nothing happens unless first we dream - Carl Sanburg", "Believe you can and you're halfway there - Theodore Roosevelt", "A place for everything, everything in it's place - Benjamin Franklin","Don't let the fear of strking out hold you back - Babe Ruth", "We can't help everyone, but everyone can help someone - Ronald Reagan", "With self-discipline most anything is possible - Theodore Roosevelt"];
+        
+        var theString = quotesArray[theDay];
+        
+        function show() {
+            document.getElementById("day").firstChild.nodeValue = theString;
+            
+        }  
+
+        
+        
+        //************************************************************
+        // 4:  loop through all of the quotes
+        //    and write the quotes to the page. Use DOM methods or innerHTML
+        //    to write to the page.
+        //************************************************************  
+
+    var allQuotes = " ";
+        
+        for(var i=0; i<quotesArray.length; i++){
+            allQuotes += quotesArray[i] + "<br>";
+        }
+    
+        //************************************************************
+        // 5: create a window.onload function to format and display
+        //    the current day name.
+        //
+        //    Display the quote for the day.
+        //
+        //    
+        //************************************************************  
+          
+        window.onload 
+        
+        window.onload = function(){
+            show();
+            
+            document.getElementById("date").innerHTML = dayArray[theDay];
+            document.getElementById("all").innerHTML = allQuotes;
+        }
+        
+
+    </script>
+ 
+<!-- The following are sample quotes. You can use other quotes -->
+<!-- of your choosing if you want to.                          -->
+<!--
+Ability is nothing without opportunity - Napoleon Bonaparte
+Nothing happens unless first we dream - Carl Sandburg
+Believe you can and you're halfway there - Theodore Roosevelt
+A place for everything, everything in its place - Benjamin Franklin
+Don't let the fear of striking out hold you back - Babe Ruth
+We can't help everyone, but everyone can help someone - Ronald Reagan
+With self-discipline most anything is possible - Theodore Roosevelt
+-->
+    
+</head>
+
+<body>
+    <h1>Quote of the Day</h1>
+    <h2><span id="day"> </span></h2> <br />
+    
+    <h2><span id="date"> </span></h2>
+
+    <p><strong>All the quotes: </strong></p>
+   <p id="all"></p>
+
+</body>
+</html>
